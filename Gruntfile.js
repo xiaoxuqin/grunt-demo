@@ -3,7 +3,7 @@ module.exports = function(grunt){
     grunt.initConfig({
         less:{
             complie: {
-                files: {'dist/complied.css':'css/*.less'}
+                files: {'dist/compiled.css':'css/*.less'}
             }
         }
     });
