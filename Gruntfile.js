@@ -1,16 +1,34 @@
-/* global module: true */
 module.exports = function (grunt) {
-    // 插件的具体配置信息
     grunt.initConfig({
-        eslint: {
+        mochacli: {
             options: {
-                eslintrc: './.eslintrc.json'
+                reporter: 'spec',
+                bail: true
             },
-            target: ['*.js']
+            all: ['test/*.js']
+        },
+        mocha_istanbul: {
+            coverage: {
+                src: 'test'
+            }
+        },
+        istanbul_check_coverage: {
+            default: {
+                options: {
+                    coverageFolder: 'coverage*',
+                    check: {
+                        lines: 90,
+                        statements: 90
+                    }
+                }
+            }
         }
     });
-    // 加载插件
-    grunt.loadNpmTasks('grunt-eslint');
-    // 构建的任务清单
-    grunt.registerTask('default', ['eslint']);
+
+    grunt.loadNpmTasks('grunt-mocha-cli');
+    grunt.loadNpmTasks('grunt-mocha-istanbul');
+
+    grunt.registerTask('default', ['mochacli']);
+    grunt.registerTask('cover', ['mocha_istanbul']);
+    grunt.registerTask('check-cover', ['istanbul_check_coverage']);
 };
