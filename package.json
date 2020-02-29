@@ -19,10 +19,8 @@
   "homepage": "https://github.com/xiaoxuqin/grunt-demo#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "grunt": "^1.0.4",
-    "grunt-eslint": "^22.0.0",
-    "grunt-mocha-cli": "^5.0.0",
-    "mocha": "^7.1.0"
+    "grunt": ">=0.4.5",
+    "grunt-mocha": "^0.4.12"
   },
   "dependencies": {
     "grunt-mocha-istanbul": "^5.0.2",
