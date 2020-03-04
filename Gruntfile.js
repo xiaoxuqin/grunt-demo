@@ -1,12 +1,5 @@
 module.exports = function (grunt) {
-    grunt.initConfig({
-        concat:{
-            files:{
-                src:['rectangle.js', 'util.js'],
-                dest:'dist/bundle.js'
-            }
-        }
+    grunt.registerTask('build', 'build task', function(){
+        console.log('build task!');
     });
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.registerTask('default', ['concat']);
 }
